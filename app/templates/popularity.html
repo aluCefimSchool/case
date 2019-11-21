@@ -1,0 +1,126 @@
+{% extends "__structure__.html" %}
+
+{% block content %}
+<p class="username-dash">{{ current_user.username }}</p>
+<img class="user-img-dash" src="{{ url_for('static', filename='img/user-img-dash.png') }}">
+    
+
+    <style>
+        body{
+              overflow: hidden;
+              font-family: 'Open Sans', sans-serif;
+        }
+
+    </style>
+
+          <title></title>
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script src="https://kit.fontawesome.com/a6ea66775c.js" crossorigin="anonymous"></script>
+        
+        
+        
+    <script>
+        
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBasic);
+        
+        function drawBasic() {
+        
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'X');
+              data.addColumn('number', 'Students');
+        
+              data.addRows([
+                [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+                [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+                [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+                [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+                [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+                [30, 55], [31, 60]
+              ]);
+        
+              var options = {
+        
+                color: 'red',
+                hAxis: {
+                  /*title: 'Time'*/
+                  title: 'day',
+                },
+                vAxis: {
+                  title: 'Popularity'
+                }
+                
+              };
+        
+              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        
+              chart.draw(data, options);
+            }
+        </script>
+        
+        <a href="{{ url_for('dashboard') }}" class="back_btn"> Back</a>
+        
+        <div id="chart_div" style="width: 1300px; height: 600px; margin-left: 100px; margin-top: 20px; z-index: -2; position: absolute;"></div>
+        <img src=" {{ url_for('static', filename='img/zoom.png') }}" style="position: absolute; width: 350px; margin-top: 36%">
+        
+        <div style=" position:absolute; margin-top: 45%; margin-left: 400px;">
+            <h2>Popularity graph</h2>
+            <p style="font-size: 18px; margin-top: -20px;">How many people answered your form ?</p>
+            <p style="font-size: 18px; margin-top: -20px;">These data are calculated in real time</p>
+        </div>
+        
+        
+        
+        <!--==================================
+        
+        
+          Share example button
+        
+        
+          =================================-->
+        <div style=" position: absolute; margin-top: 50%; margin-left: 600px">
+          <button onclick="myFunction()" style=" background-color: #5CEFC4; border: none; border-radius: 10px; color: #fff; padding: 10px 45px; text-align: center; text-decoration: none;display: inline-block; font-size: 14px; margin-left: 300px; ">Share<i style="color: white" class="fas fa-paper-plane"></i></button> 
+        
+          <div id="myDIV" style="display: none;">
+            <div style="margin-left: 500px; margin-top: -30px;">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+              <a href="#"><i class="fas fa-heart"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <style>
+          i{
+            color: #CFCFCF;
+            margin-left: 30px;
+        
+          }
+        
+          i:hover{
+        
+            color: #5CEFC4; border
+          }
+        </style>
+        
+        <script>
+          function myFunction() {
+          var x = document.getElementById("myDIV");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        } 
+        </script>
+        
+
+
+
+
+
+{% endblock %}

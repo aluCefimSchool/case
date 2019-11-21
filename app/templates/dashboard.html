@@ -1,5 +1,148 @@
 {% extends "__structure__.html" %}
 
 {% block content %}
-    <h1>{{ user }}</h1>
+    <p class="username-dash">{{ current_user.username }}</p>
+    <img class="user-img-dash" src="{{ url_for('static', filename='img/user-img-dash.png') }}">
+
+
+    <style>
+            body{
+            background-color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            overflow: hidden;
+            
+        
+        }
+        
+        </style>
+        
+        <!--<div class="horz-nav">Welcome at Case plu</div>-->
+        
+        
+        
+        
+        
+        <div class="nav-bar">
+            <div class="hover-it">
+        
+            
+            
+            <!--<a class="user-name" href="#"><img class="user-icon" src="../user.png">Electro_</a>-->
+        
+                <div class="dropdown">
+                        <div style=" background-color: #5CEFC4;  margin-top:10px; margin-left: -29px; padding: 110px 42px;">
+                            <img style="width: 45px; margin-left: -22px;" src="{{ url_for('static', filename='img/laptop.svg') }}">
+                        </div>
+                        <div class="dropdown-content">
+                            <a href= "{{ url_for('dashboard') }}">Graph</a>
+                        </div>
+                </div>
+        
+        
+                <div class="dropdown-a">
+                    <img src="{{ url_for('static', filename='img/heart-none.svg') }}">
+                      <div class="dropdown-content-a">
+                          <a href="#">Favorite</a>
+                      </div>
+                </div>
+        
+                <div class="dropdown-a1">
+                    <img src="  {{ url_for('static', filename='img/add-none.svg') }}">
+                      <div class="dropdown-content-a1">
+                          <a href="#">Create new</a>
+                      </div>
+                </div>
+        
+        
+                <div class="dropdown-b">
+                    <img src="{{ url_for('static', filename='img/chat-none.svg') }}">
+                      <div class="dropdown-content-b">
+                          <a href="profil-com.html ">Messenger</a>
+                      </div>
+                </div>
+        
+        
+        
+                <div class="dropdown-c">
+                    <img src="{{ url_for('static', filename='img/logout.svg') }}">
+                      <div class="dropdown-content-c">
+                          <a href="#">exit</a>
+                      </div>
+                </div>
+        
+        
+        
+        
+            </div>
+        </div>
+        
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+          
+        
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+            <div>
+                <p style="position: absolute; margin-top: 30px; margin-left: 120px; font-size: 30px; color:#CFCFCF;">Overviews</p>
+                <p style="position: absolute; margin-top: 60px; margin-left: 120px; font-size: 25px; color:#000;">Graphics temperatures</p>
+            </div>
+           
+            <div class="graph-section">
+        
+        
+                 <div id="chart_div" style="position: absolute; width: 250px; height: 200px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); margin-left: 100px; border-radius: 20px;">
+                     <p style="margin-left:90px; margin-top: 90px;  position: absolute; color: #000; font-size: 
+                     13px">Popularity</p>
+                     <h1 style="margin-left: 80px; margin-top: 40px; position: absolute; color: #000;">3,644</h1>
+                     <!--<img src="../fire.svg" style=" position:absolute; width: 35px; margin-left: 100px; margin-top: 170px;">-->
+                     <a href="{{ url_for('popularity') }}" style=" position: absolute; margin-left:70%; text-decoration: none; color: #fff; background-color: #2135F2; padding: 8px 50px; border-radius: 8px; font-size: 16px; margin-top:140px; margin-left: 50px;">more</a>
+                 </div>
+        
+        
+        
+        
+        
+                  <div id="donutchart" style="position: absolute; width: 250px; height: 200px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); margin-left: 400px; border-radius: 20px;">
+                     <p style="margin-left:80px; margin-top: 90px;  position: absolute; color: #000; font-size: 
+                     13px">Average score</p>
+                     <h1 style="margin-left: 100px; margin-top: 40px; position: absolute; color: #000;">3/5</h1>
+                     <!--<img src="../fire.svg" style=" position:absolute; width: 35px; margin-left: 100px; margin-top: 170px;">-->
+                     <a href="{{ url_for('score') }}" style=" position: absolute; margin-left:70%; text-decoration: none; color: #fff; background-color: #2135F2; padding: 8px 50px; border-radius: 8px; font-size: 16px; margin-top:140px; margin-left: 60px;">more</a>
+                 </div>
+        
+        
+        
+        
+                <div id="curve_chart" style="position: absolute; width: 250px; height: 200px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); margin-left: 700px; border-radius: 20px;">
+                    <p style="margin-left:80px; margin-top: 90px;  position: absolute; color: #000; font-size: 
+                         13px">Performances</p>
+                    <h1 style="margin-left: 100px; margin-top: 40px; position: absolute; color: red; font-weight: 20px;">Up</h1>
+        
+                    <a href="{{ url_for('performance') }}" style=" position: absolute; margin-left:70%; text-decoration: none; color: #fff; background-color: #2135F2; padding: 8px 50px; border-radius: 8px; font-size: 16px; margin-top:140px; margin-left: 60px;">more</a>
+                    
+                </div>
+        
+        
+                <div id="curve_chart" style="position: absolute; width: 250px; height: 200px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); margin-left: 1000px; border-radius: 20px;">
+                    <p style="margin-left:80px; margin-top: 90px;  position: absolute; color: #000; font-size: 
+                         13px">Performances</p>
+                    <h1 style="margin-left: 100px; margin-top: 40px; position: absolute; color: red; font-weight: 20px;">Up</h1>
+        
+                    <a href="{{ url_for('performance') }}" style=" position: absolute; margin-left:70%; text-decoration: none; color: #fff; background-color: #2135F2; padding: 8px 50px; border-radius: 8px; font-size: 16px; margin-top:140px; margin-left: 60px;">more</a>
+                    
+                </div>
+        
+            </div>
+        
+                <img class="graph-tags2"src="{{ url_for('static', filename='img/graph-tags2.png') }}">
+                <div class="graph-tags">
+                    <h3 style="font-size: 25px; margin-left: 180px;"><strong>Graphics Cards</strong></h3> 
+                    <p style="font-size: 16px; margin-left: 180px; width: 380px;">Just take the temperature these graphics cards are a visual representation of your digital information</p>
+                    <img style=" position: absolute; margin-top:-100px; margin-left: 50px; width: 100px;" src="{{ url_for('static', filename='img/donut-chart.svg') }}">
+                </div>
+        
+        
+        
+
+
 {% endblock %}

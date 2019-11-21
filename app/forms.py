@@ -2,12 +2,15 @@ from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import StringField, PasswordField, BooleanField, SelectField, SubmitField, validators
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 from wtforms.fields.html5 import EmailField, DateField
-from app.models import User
+from app.models import User, Promotion
+
+def choice_promo():
+    return Promotion.query
 
 class SignInForm(FlaskForm):
     username = StringField('Username', [validators.DataRequired()])
     password = PasswordField('Password', [validators.DataRequired()])
-    recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField([validators.DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Se connecter')
 
@@ -21,10 +24,10 @@ class SignUpForm(FlaskForm):
         validators.DataRequired(), 
         validators.EqualTo('password', 'La donnée saisie ne correspond pas à votre mot de passe !')
     ])
-    # promo_choice = SelectField('Promotion', choices=[('DW', 'Designer Web'), ('DWWM', 'Developpeur Web et Web Mobile')])
+    promo_choice = SelectField('Promotion', coerce=int, choices=[])
     birthday = DateField('Date de naissance', [validators.DataRequired()])
     accept_tos = BooleanField('Termes d\'Utilisation', [validators.DataRequired()])
-    recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField([validators.DataRequired()])
     submit = SubmitField('S\'enregistrer')
 
     def validate_username(self, username):

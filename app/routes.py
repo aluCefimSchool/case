@@ -61,7 +61,12 @@ def index():
 @app.route('/signup', methods=['GET', 'POST'])
 def signUp():
     form = SignUpForm()
+<<<<<<< HEAD
+    form.promo_choice.choices = [(promotion.id_promotion, promotion.code) for promotion in Promotion.query.all()]
+
+=======
     
+>>>>>>> 539db4dcf20be3fee5d56dac119f30a8a4cb3206
     if current_user.is_authenticated:
         return redirect(url_for('dashboard'))
         flash(f"Vous êtes déja inscrit sur notre application !", "info")
@@ -117,8 +122,79 @@ def profil():
                 email = session["email"]
 
         #Return template index.html with data
+<<<<<<< HEAD
+        return render_template('profil.html', title='Profil')
+
+
+##
+# ADMIN_DASHBOARD ROUTE
+## 
+@app.route('/administration/dashboard')
+@login_required
+def a_dashboard():
+        user = current_user
+
+
+        return render_template('administration/dashboard.html', title='Administration', user=user)
+=======
         return render_template('profil.html', title='Profil', email=email)
     
     else:
         #Redirect to signin route
         return redirect(url_for("index"))
+
+
+
+
+
+
+
+
+##
+# POPULARITY_GRAPH ROUTE
+##
+@app.route('/popularity')
+@login_required
+def popularity():
+    if current_user.is_authenticated:
+        #Return template popularity.html with data
+        return render_template('popularity.html', title='Popularity')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+##
+# PERFORMANCE_GRAPH ROUTE
+##
+@app.route('/performance')
+@login_required
+def performance():
+    if current_user.is_authenticated:
+        #Return template performance.html with data
+        return render_template('performance.html', title='Performance')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
+##
+# SCORE_GRAPH ROUTE
+##
+@app.route('/score')
+@login_required
+def score():
+    if current_user.is_authenticated:
+        #Return template score.html with data
+        return render_template('score.html', title='Score')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
+>>>>>>> 539db4dcf20be3fee5d56dac119f30a8a4cb3206
