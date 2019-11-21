@@ -62,7 +62,6 @@ def index():
 def signUp():
     form = SignUpForm()
     form.promo_choice.choices = [(promotion.id_promotion, promotion.code) for promotion in Promotion.query.all()]
-    flash(form.promo_choice.data)
 
     if current_user.is_authenticated:
         return redirect(url_for('dashboard'))
@@ -120,3 +119,15 @@ def profil():
 
         #Return template index.html with data
         return render_template('profil.html', title='Profil')
+
+
+##
+# ADMIN_DASHBOARD ROUTE
+## 
+@app.route('/administration/dashboard')
+@login_required
+def a_dashboard():
+        user = current_user
+
+
+        return render_template('administration/dashboard.html', title='Administration', user=user)
