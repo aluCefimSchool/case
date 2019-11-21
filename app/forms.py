@@ -10,7 +10,7 @@ def choice_promo():
 class SignInForm(FlaskForm):
     username = StringField('Username', [validators.DataRequired()])
     password = PasswordField('Password', [validators.DataRequired()])
-    recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField([validators.DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Se connecter')
 
@@ -27,7 +27,7 @@ class SignUpForm(FlaskForm):
     promo_choice = SelectField('Promotion', coerce=int, choices=[])
     birthday = DateField('Date de naissance', [validators.DataRequired()])
     accept_tos = BooleanField('Termes d\'Utilisation', [validators.DataRequired()])
-    recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField([validators.DataRequired()])
     submit = SubmitField('S\'enregistrer')
 
     def validate_username(self, username):
