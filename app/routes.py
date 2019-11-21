@@ -88,7 +88,7 @@ def signUp():
 @app.route('/logout')
 def logOut():
     logout_user()
-    flash(f"Vous avez été déconnecté de l'application !", "info")
+    flash(f"You have been disconnected from the app!", "info")
     return redirect(url_for('index'))
 
 ##
