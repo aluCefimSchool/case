@@ -4,7 +4,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 from app import app 
 from app import db
 from app.forms import SignInForm, SignUpForm
-from app.models import User, Promotion
+from app.models import User
 
 
 ##
@@ -61,8 +61,12 @@ def index():
 @app.route('/signup', methods=['GET', 'POST'])
 def signUp():
     form = SignUpForm()
+<<<<<<< HEAD
     form.promo_choice.choices = [(promotion.id_promotion, promotion.code) for promotion in Promotion.query.all()]
 
+=======
+    
+>>>>>>> 539db4dcf20be3fee5d56dac119f30a8a4cb3206
     if current_user.is_authenticated:
         return redirect(url_for('dashboard'))
         flash(f"Vous êtes déja inscrit sur notre application !", "info")
@@ -71,10 +75,7 @@ def signUp():
     if request.method == 'POST' and form.validate_on_submit():
         user = User(lastname = form.lastname.data, firstname = form.firstname.data, username=form.username.data, email=form.email.data, birthday=form.birthday.data)
         user.set_password(form.password.data)
-        promotion = Promotion.query.filter_by(id_promotion = form.promo_choice.data).first()
-                    
         db.session.add(user)
-        promotion.promotions.append(user)
         db.session.commit()
         flash('Votre inscription a été prit en compte {}. Veuillez vérifier vos email pour confirmer votre inscription'.format(form.username.data, "info"))
         return redirect(url_for('index'))
@@ -87,7 +88,7 @@ def signUp():
 @app.route('/logout')
 def logOut():
     logout_user()
-    flash(f"Vous avez été déconnecté de l'application !", "info")
+    flash(f"You have been disconnected from the app!", "info")
     return redirect(url_for('index'))
 
 ##
@@ -110,6 +111,9 @@ def dashboard():
 @app.route('/profil')
 @login_required
 def profil():
+    if "user" in session:
+        user = session["user"]
+
         if request.method == "POST" and form.validate_on_submit():
             email = request.form["email"]
             session["email"] = email
@@ -118,6 +122,7 @@ def profil():
                 email = session["email"]
 
         #Return template index.html with data
+<<<<<<< HEAD
         return render_template('profil.html', title='Profil')
 
 
@@ -131,3 +136,65 @@ def a_dashboard():
 
 
         return render_template('administration/dashboard.html', title='Administration', user=user)
+=======
+        return render_template('profil.html', title='Profil', email=email)
+    
+    else:
+        #Redirect to signin route
+        return redirect(url_for("index"))
+
+
+
+
+
+
+
+
+##
+# POPULARITY_GRAPH ROUTE
+##
+@app.route('/popularity')
+@login_required
+def popularity():
+    if current_user.is_authenticated:
+        #Return template popularity.html with data
+        return render_template('popularity.html', title='Popularity')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+##
+# PERFORMANCE_GRAPH ROUTE
+##
+@app.route('/performance')
+@login_required
+def performance():
+    if current_user.is_authenticated:
+        #Return template performance.html with data
+        return render_template('performance.html', title='Performance')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
+##
+# SCORE_GRAPH ROUTE
+##
+@app.route('/score')
+@login_required
+def score():
+    if current_user.is_authenticated:
+        #Return template score.html with data
+        return render_template('score.html', title='Score')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
+>>>>>>> 539db4dcf20be3fee5d56dac119f30a8a4cb3206

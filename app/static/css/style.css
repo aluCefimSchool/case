@@ -10,4 +10,433 @@ body{
     width: 100%;
     height: 100%;
     font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.logo_case{
+	position: absolute;
+	width: 5%;
+	margin-top: 8px; 
+
+
+}
+
+.title-case{
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	font-size: 40px;
+	margin-top:15px;
+	margin-left: 6%; 
+}
+
+.logo_sing{
+	position: absolute;
+	margin-top: 14%;
+	margin-left: 15px;
+	width: 50%;
+}
+
+.sing_in_title{
+    position: absolute;
+    margin-top: 100px;
+}
+
+.hidden-message{
+    position: absolute;
+	margin-left: 15%; 
+    margin-top: 10%;
+    color: crimson;
+    text-decoration: none;
+
+}
+
+.hidden-message li{
+    text-decoration: none;
+}
+
+.form-log{
+    position: absolute;
+	margin-left: 65%; 
+	margin-top: 15%;
+}
+
+.psw-inp
+{
+	width: 100%;
+  	padding: 18px 20px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+.showpass{
+	margin-top: 2%;
+	font-size: 12px;
+
+}
+
+.remember_me{
+	margin-top: 2%;
+	font-size: 12px;
+}
+
+.mail-inp{
+
+	width: 100%;
+  	padding: 18px 20px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+
+.btn-in {
+
+	width: 100%;
+  	padding: 22px 20px;
+	border-radius: 10px;
+	margin-right: 13%;
+	border:none;
+	background-color:#2135F2;
+    color: #fff;
+	font-size: 16px;
+
+
+}
+.singupdiv{
+    position: absolute;
+    margin-left: 90px;
+	font-size: 15px;
+}
+.singuplink{
+	color:#000;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+.singuplink:hover{
+    color:#CFCFCF;
+    text-decoration: none;
+}
+
+/* sign up page */
+
+.form-log-up{
+
+	position: absolute;
+	margin-left: 65%; 
+	margin-top: 2%;
+
+}
+
+
+.firstname-inp{
+	width: 100%;
+  	padding: 14px 18px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+	margin-bottom: 8%;
+	margin-right: 30%;
+
+}
+
+.lastname-inp{
+	width: 100%;
+  	padding: 14px 18px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+.username-inp{
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    border: 2px solid #DEDEDE;
+
+    margin-top: -30px;
+}
+.birth-inp{
+    width: 100%;
+  	padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    border: 2px solid #DEDEDE;
+
+}
+
+.psw-inp-up{
+	width: 100%;
+  	padding: 14px 18px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+
+
+.conf-psw-inp-up{
+	width: 100%;
+  	padding: 14px 18px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+.mail-inp-up{
+
+    width: 100%;
+    padding: 14px 18px;
+  	font-size: 16px;
+	border-radius: 10px;
+	border:none;
+	border: 2px solid #DEDEDE;
+
+}
+
+
+.btn-up {
+
+	width: 100%;
+  	padding: 14px 18px;
+	border-radius: 10px;
+	margin-right: 13%;
+	border:none;
+	background-color:#2135F2;
+	color: #fff;
+	font-size: 16px;
+    margin-top: -10px;
+}
+
+.singindiv{
+	
+	font-size: 15px;
+
+}
+
+.singinlink{
+
+	color:#000;
+    text-decoration: none;
+    margin-left: 60px;
+
+}
+.singinlink:hover{
+
+	color:#CFCFCF;
+    text-decoration: none;
+
+}
+.cu{
+    font-size: 12px;
+}
+
+/*Dash page*/
+
+.username-dash{
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    margin-top: 38px;
+    margin-left: 82%;
+    font-size: 18px;
+}
+.user-img-dash{
+    position: absolute;
+    width: 45px;
+    border-radius: 50%;
+    margin-top: 23px;
+    margin-left: 77%;
+}
+
+.nav-bar{
+
+	background-color:#fff;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	width: 80px;
+	height: 2000px;
+	position: absolute;
+	color: #000;
+	margin-top:-50px;
+	margin-left:-10px;
+	z-index: -1px;
+}
+
+
+.hover-it{
+	color: #000;
+	margin-left: 25px;
+	z-index: 1px;
+}
+
+.hover-it a{
+	text-decoration: none;
+	color: #000;
+	font-size: 15px;
+}
+
+
+.dropdown img {
+	width: 35px;
+
+}
+.dropdown-a img {
+  width: 24px;
+   margin-top: 60px;
+}
+.dropdown-a1 img {
+  width: 24px;
+   margin-top: 
+  60px;
+}
+
+.dropdown-b img {
+  width: 24px;  
+  margin-top: 
+  60px;
+}
+
+.dropdown-c img {
+  width: 24px;
+  margin-top: 
+  60px;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 14px;
+  z-index: 1;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+.dropdown-content-a{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 14px;
+  z-index: 1;
+}
+
+.dropdown-a:hover .dropdown-content-a {
+  display: block;
+}
+
+
+.dropdown-content-a1{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 14px;
+  z-index: 1;
+}
+
+.dropdown-a1:hover .dropdown-content-a1 {
+  display: block;
+}
+
+
+
+
+.dropdown-content-b{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 14px;
+  z-index: 1;
+}
+
+.dropdown-b:hover .dropdown-content-b {
+  display: block;
+}
+
+
+
+
+.dropdown-content-c {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 14px;
+  z-index: 1;
+}
+
+.dropdown-c:hover .dropdown-content-c {
+  display: block;
+}
+
+
+
+.graph-section{
+  position: absolute;
+  margin-top: 200px;
+}
+.comment-section{
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 250px;
+}
+
+.graph-tags2{
+  position: absolute;
+  width: 300px;
+  margin-top: 500px;
+  margin-left: 1100px;
+}
+
+.graph-tags{
+  position: absolute;
+  width: 600px;
+  height: 180px;
+  margin-top: 500px;
+  margin-left: 100px;
+  background-color: #5CEFC4;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.back_btn{
+    position: absolute; 
+    text-decoration: none; 
+    color: #000; 
+    font-size: 20px; 
+    margin-top: 50px; 
+    margin-left: 30px;
+}
+
+.back_btn:hover{
+    
+    text-decoration: none; 
+    color: #CFCFCF; 
 }

@@ -4,26 +4,15 @@
 <html>
     <head>
       {% if title %}
-      <title>{{ title }} - Satisfaktion</title>
+      <title>{{ title }} - Case</title>
       {% else %}
-      <title>Welcome to Satisfaktion</title>
+      <title>Welcome to Case</title>
       {% endif %}
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
-        <div>Navigation: 
-            <a href="/"><img src="https://i.pinimg.com/originals/42/b9/b1/42b9b1a18c7c2255f72c19bbe78fb06d.png" /></a>
-            {% if current_user.is_anonymous %}
-                <a href="{{ url_for('index') }}">Se connecter</a>
-                <a href="{{ url_for('signUp') }}">S'enregistrer</a>
-            {% else %}
-                <a href="{{ url_for('dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('profil') }}">Profil</a>
-                <a href="{{ url_for('logOut') }}">Logout</a>
-            {% endif %}
-        </div>
-
-        <hr>
+        
+    <div class="hidden-message">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
             <ul>
@@ -33,7 +22,7 @@
             </ul>
             {% endif %}
         {% endwith %}
-        
+    </div>
         {% block content %}{% endblock %}
     </body>
 </html>

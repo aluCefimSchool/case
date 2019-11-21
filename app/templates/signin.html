@@ -1,26 +1,57 @@
 {% extends "__structure__.html" %}
 
 {% block content %}
-    <h1>Se connecter</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
+<div>
+    <img src="{{ url_for('static', filename='img/case_logo.png') }}" class="logo_case"/><H1 class="title-case">Case</H1>
+</div>
+
+<style>
+    body{
+        overflow: hidden;
+    }
+
+</style>
+    <h1 class="sing_in_title"></h1>
+
+    <img src="{{ url_for('static', filename='img/Welcome-page 2.png') }}" alt="logo" class="logo_sing"/>
+   
+    <form action="" method="post" novalidate class="form-log">
+        {{ form.hidden_tag()}}
         <p>
-            {{ form.username.label }}<br>
-            {{ form.username(placeholder=form.username.label.text, size=32) }} 
+            {{ form.username(placeholder=form.username.label.text, class_="mail-inp")}} 
             {% for error in form.username.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(placeholder=form.password.label.text, size=32) }} 
+            {{ form.password(placeholder=form.password.label.text, class_="psw-inp") }} 
             {% for error in form.password.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
+        <div class="showpass">
+                <input type="checkbox" onclick="myFunction()">Show Password
+        </div>
+
         <p>{{ form.recaptcha }}</p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-        <p>New User? <a href="{{ url_for('signUp') }}">Click to Register!</a></p>
+        <p class="remember_me">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit(class_="btn-in") }}</p>
+
+        <div class="singupdiv">
+            <p><a href="{{ url_for('signUp') }}" class="singuplink">You new ? Sign up</a></p>
+        </div>        
+
     </form>
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        }
+    </script>
+          
 {% endblock %}
