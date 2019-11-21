@@ -83,7 +83,7 @@ def signUp():
 @app.route('/logout')
 def logOut():
     logout_user()
-    flash(f"Vous avez été déconnecté de l'application !", "info")
+    flash(f"You have been disconnected from the app!", "info")
     return redirect(url_for('index'))
 
 ##
@@ -122,3 +122,58 @@ def profil():
     else:
         #Redirect to signin route
         return redirect(url_for("index"))
+
+
+
+
+
+
+
+
+##
+# POPULARITY_GRAPH ROUTE
+##
+@app.route('/popularity')
+@login_required
+def popularity():
+    if current_user.is_authenticated:
+        #Return template popularity.html with data
+        return render_template('popularity.html', title='Popularity')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+##
+# PERFORMANCE_GRAPH ROUTE
+##
+@app.route('/performance')
+@login_required
+def performance():
+    if current_user.is_authenticated:
+        #Return template performance.html with data
+        return render_template('performance.html', title='Performance')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
+##
+# SCORE_GRAPH ROUTE
+##
+@app.route('/score')
+@login_required
+def score():
+    if current_user.is_authenticated:
+        #Return template score.html with data
+        return render_template('score.html', title='Score')
+    
+    else:
+        #Redirect to dashboard route
+        return redirect(url_for("dashboard"))
+
+
+
