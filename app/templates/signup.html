@@ -1,65 +1,72 @@
 {% extends "__structure__.html" %}
 
 {% block content %}
-    <h1>S'enregistrer</h1>
-    <form action="" method="post" novalidate>
+<div>
+    <img src="{{ url_for('static', filename='img/case_logo.png') }}" class="logo_case"/><H1 class="title-case">Case</H1>
+</div>
+<style>
+body{
+    overflow: hidden;
+}    
+</style>
+    <h1></h1>
+    <img src="{{ url_for('static', filename='img/Welcome-page 2.png') }}" alt="logo" class="logo_sing"/>
+    <form action="" method="post" novalidate class="form-log-up">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.lastname.label }}<br>
-            {{ form.lastname(placeholder=form.lastname.label.text) }} 
+            {{ form.lastname(placeholder=form.lastname.label.text, class_="lastname-inp") }} 
             {% for error in form.lastname.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.firstname.label }}<br>
-            {{ form.firstname(placeholder=form.firstname.label.text) }} 
+            {{ form.firstname(placeholder=form.firstname.label.text, class_="firstname-inp") }} 
             {% for error in form.firstname.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.username.label }}<br>
-            {{ form.username(placeholder=form.username.label.text) }} 
+            {{ form.username(placeholder=form.username.label.text, class_="username-inp") }} 
             {% for error in form.username.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
          </p>
          <p>
-            {{ form.birthday.label }}<br>
-            {{ form.birthday(placeholder=form.birthday.label.text) }} 
+            {{ form.birthday(placeholder=form.birthday.label.text, class_="birth-inp") }} 
             {% for error in form.birthday.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
          <p>
-            {{ form.email.label }}<br>
-            {{ form.email(placeholder=form.email.label.text) }} 
+            {{ form.email(placeholder=form.email.label.text, class_="mail-inp-up" )}} 
             {% for error in form.email.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(placeholder=form.password.label.text) }} 
+            {{ form.password(placeholder=form.password.label.text, class_="psw-inp-up") }} 
             {% for error in form.password.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.confirmPass.label }}<br>
-            {{ form.confirmPass(placeholder=form.confirmPass.label.text) }} 
+            {{ form.confirmPass(placeholder=form.confirmPass.label.text, class_="conf-psw-inp-up") }} 
             {% for error in form.confirmPass.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
         <p>
             {{ form.accept_tos }} 
-            <span>En cochant, vous acceptez nos <a href="terms">conditions d'utilisations</a></span>
+            <span class="cu"> En cochant, vous acceptez nos <a href="terms">conditions d'utilisations</a></span>
         </p>
         <p>
             {{ form.recaptcha }} 
         </p>
-        <p>{{ form.submit() }}</p>
+        <p>{{ form.submit(class_="btn-up") }}</p>
+
+        <div class="singindiv">
+            <p><a href="{{ url_for('index') }}" class="singinlink">You have an account ? Sign in</a></p>
+        </div>        
+
     </form>
 {% endblock %}
