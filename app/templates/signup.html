@@ -37,6 +37,13 @@ body{
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </p>
+        <p>
+            {{ form.promo_choice.label }}<br>
+            {{ form.promo_choice }} 
+            {% for error in form.promo_choice.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>  
          <p>
             {{ form.email(placeholder=form.email.label.text, class_="mail-inp-up" )}} 
             {% for error in form.email.errors %}

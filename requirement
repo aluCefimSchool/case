@@ -1,0 +1,19 @@
+#!/bin/bash
+# This script get content to command pip freeze and execute them
+
+PS3='> Etes-vous dans votre environnement ? ' 
+LIST=("[y] yes" "[n]  no")
+select CHOICE in "${LIST[@]}" ; do
+    case $REPLY in
+        1|y)
+            for element in $(cat requirements.txt);
+                do
+                    pip install ${element%%=*}
+                done
+            break;;
+
+        2|n)
+            echo Veuillez-vous rendre dans votre environnement avant d\'éxecuter le script !
+            break;;
+    esac
+done
