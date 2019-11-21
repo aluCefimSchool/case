@@ -3,7 +3,7 @@ import os
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') 
 
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://case:case@localhost:8889/case'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://Case_CDA:6wJwKUA7XZ8d&Wb!@da.cefim-formation.org/Case_CDA'
     
     #SQLALCHEMY - CONFIG
     SQLALCHEMY_POOL_RECYCLE = 90
